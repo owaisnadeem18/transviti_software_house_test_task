@@ -21,7 +21,7 @@ const Header = () => {
 
   return (
     <header className="w-full bg-white border-b border-gray-200 font-sans sticky top-0 z-50">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6">
+      <div className="max-w-360 mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center h-16 gap-4">
           
           {/* Left: Logo & Nav Container */}
