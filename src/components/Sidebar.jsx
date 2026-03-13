@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { userAvatar } from '@/assets' // Using your existing assets
+import { coverImage, profileImage, userAvatar } from '@/assets' // Using your existing assets
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
 
 const Sidebar = () => {
@@ -8,14 +8,18 @@ const Sidebar = () => {
     <aside className="w-full lg:w-75 flex flex-col gap-6 shrink-0">
       {/* Profile Card */}
       <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
-        <Image sr className="h-24  relative">
+        <div className='relative' >
+
+        <Image src = {coverImage} alt='cover-image' className="h-24" />
           {/* Cover Image Placeholder */}
           <div className="absolute -bottom-10 left-1/2 -translate-x-1/2">
             <div className="h-20 w-20 rounded-full border-4 border-white overflow-hidden bg-white">
-              <Image src={userAvatar} alt="Profile" className="object-cover h-full w-full" />
+              <Image src={profileImage} alt="Profile" className="object-cover h-full w-full" />
             </div>
           </div>
-        </Image>
+        
+        </div>
+        
         <div className="pt-12 pb-6 px-4 text-center">
           <h2 className="text-lg font-bold text-slate-900">Albert Flores</h2>
           <p className="text-xs text-slate-500 mt-1 px-4 leading-tight">

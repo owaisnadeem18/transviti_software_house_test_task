@@ -25,7 +25,7 @@ const Header = () => {
         <div className="flex justify-between items-center h-16 gap-4">
           
           {/* Left: Logo & Nav Container */}
-          <div className="flex items-center gap-8 min-w-0"> 
+          <div className="flex items-center gap-4"> 
             <div className="shrink-0">
               <Image src={logo} alt="Logo" className="h-8 w-auto" priority />
             </div>

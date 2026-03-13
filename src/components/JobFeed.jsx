@@ -1,42 +1,60 @@
 import React from 'react'
-import { MagnifyingGlassIcon, MapPinIcon, BriefcaseIcon } from '@heroicons/react/24/outline'
+import { MagnifyingGlassIcon, MapPinIcon, BriefcaseIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
+import { jobSearchIcon, searchIcon } from '@/assets'
+import Image from 'next/image'
 
 const JobFeed = () => {
   return (
     <div className="flex-1 flex flex-col gap-8">
       {/* Search & Filter Section */}
-      <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-        <div className="mb-6">
+      <div className="py-4 flex flex-col gap-6"> 
+        <div className="">
           <h1 className="text-2xl font-bold text-slate-900">Find your Dream Job, <span className="text-[#0052B4]">Albert!</span></h1>
           <p className="text-sm text-slate-500">Explore the latest job openings and apply for the best opportunities available today!</p>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-0 border border-gray-200 rounded-lg overflow-hidden">
-          <div className="flex-1 flex items-center px-4 py-3 border-b md:border-b-0 md:border-r border-gray-200">
-            <MagnifyingGlassIcon className="h-5 w-5 text-slate-400 mr-2" />
-            <input type="text" placeholder="Job Title, Company, or Keywords" className="w-full outline-none text-sm" />
-          </div>
-          <div className="flex-1 flex items-center px-4 py-3 border-b md:border-b-0 md:border-r border-gray-200">
-            <MapPinIcon className="h-5 w-5 text-slate-400 mr-2" />
-            <select className="w-full outline-none text-sm text-slate-500 bg-transparent">
-              <option>Select Location</option>
-            </select>
-          </div>
-          <div className="flex-1 flex items-center px-4 py-3">
-            <BriefcaseIcon className="h-5 w-5 text-slate-400 mr-2" />
-            <select className="w-full outline-none text-sm text-slate-500 bg-transparent">
-              <option>Job Type</option>
-            </select>
-          </div>
-          <button className="bg-[#0052B4] text-white px-8 py-3 font-semibold hover:bg-blue-700 transition-colors">
-            Search
-          </button>
-        </div>
+        <div className="bg-white flex flex-col md:flex-row rounded-lg overflow-hidden border border-gray-100 items-center min-h-[70px] pr-4">
+  
+  {/* Section 1: Input */}
+  <div className="flex-[1.5] flex items-center px-6 h-full relative">
+    <input 
+      type="text" 
+      placeholder="Job Title, Company, or Keywords" 
+      className="w-full outline-none text-[14px] placeholder:text-slate-400" 
+    />
+    {/* Inset Divider */}
+    <div className="hidden md:block absolute right-0 h-8 w-[1px] bg-gray-200" />
+  </div>
 
-        <div className="mt-4 flex items-center gap-3">
+  {/* Section 2: Location */}
+  <div className="flex-1 flex items-center px-6 h-full relative">
+    <select className="w-full outline-none text-[14px] text-slate-500 bg-transparent appearance-none cursor-pointer">
+      <option>Select Location</option>
+    </select>
+    <ChevronDownIcon className="h-4 w-4 text-slate-400 shrink-0 ml-1" />
+    {/* Inset Divider */}
+    <div className="hidden md:block absolute right-0 h-8 w-[1px] bg-gray-200" />
+  </div>
+
+  {/* Section 3: Job Type */}
+  <div className="flex-1 flex items-center px-6 h-full">
+    <select className="w-full outline-none text-[14px] text-slate-500 bg-transparent appearance-none cursor-pointer">
+      <option>Job Type</option>
+    </select>
+    <ChevronDownIcon className="h-4 w-4 text-slate-400 shrink-0 ml-1" />
+  </div>
+
+  {/* Section 4: Search Button */}
+  <button className="bg-[#0154AA] text-white px-6 py-2.5 hover:bg-blue-700 transition-all flex items-center gap-2 rounded-lg font-semibold shrink-0 ml-2">
+    <Image src={jobSearchIcon} alt="Search" className="h-4 w-4 brightness-0 invert" />
+    Search
+  </button>
+</div>
+
+        <div className="flex items-center gap-3">
           <span className="text-xs text-slate-500 font-medium">Similar:</span>
           {['Frontend', 'Backend', 'Graphic Designer'].map(tag => (
-            <button key={tag} className="text-xs border border-gray-300 px-3 py-1 rounded-md text-slate-600 hover:bg-gray-50">
+            <button key={tag} className="text-xs border border-gray-300 px-[15px] py-2 rounded-md text-slate-600 hover:bg-gray-50 rounded-[5px] ">
               {tag}
             </button>
           ))}
