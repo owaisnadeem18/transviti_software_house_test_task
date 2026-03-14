@@ -2,6 +2,7 @@ import React from 'react'
 import { MagnifyingGlassIcon, MapPinIcon, BriefcaseIcon, ChevronDownIcon } from '@heroicons/react/24/outline'
 import { jobSearchIcon, searchIcon } from '@/assets'
 import Image from 'next/image'
+import JobsHeader from './JobsHeader'
 
 const JobFeed = () => {
   return (
@@ -61,19 +62,10 @@ const JobFeed = () => {
         </div>
       </div>
 
-      {/* Jobs Grid Container */}
-      <div className="space-y-4">
-        <div className="flex justify-between items-center">
-          <h2 className="font-bold text-slate-900">Featured Jobs</h2>
-          <button className="text-[#0052B4] text-sm font-semibold hover:underline">See Featured Jobs</button>
-        </div>
-        
-        {/* Mock Data Placeholder */}
-        <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-5 gap-4">
-           {/* Map your mock data here later */}
-           <p className="text-slate-400 italic text-sm">Ready for your mock data mapping...</p>
-        </div>
-      </div>
+      <JobsHeader heading={"Featured Jobs"} subheading={"See Featured Jobs"} />
+
+      
+
     </div>
   )
 }
