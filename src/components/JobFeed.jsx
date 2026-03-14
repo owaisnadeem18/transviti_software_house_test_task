@@ -3,6 +3,8 @@ import { MagnifyingGlassIcon, MapPinIcon, BriefcaseIcon, ChevronDownIcon } from 
 import { jobSearchIcon, searchIcon } from '@/assets'
 import Image from 'next/image'
 import JobsHeader from './JobsHeader'
+import JobCard from './JobCard'
+import { featuredJobsData } from '@/lib/data/featuredJobsData'
 
 const JobFeed = () => {
   return (
@@ -14,7 +16,7 @@ const JobFeed = () => {
           <p className="text-sm text-slate-500">Explore the latest job openings and apply for the best opportunities available today!</p>
         </div>
 
-        <div className="bg-white flex flex-col md:flex-row rounded-lg overflow-hidden border border-gray-100 items-center min-h-[70px] pr-4">
+        <div className="bg-white flex flex-col md:flex-row rounded-lg overflow-hidden border border-gray-100 items-center min-h-17.5 pr-4">
   
   {/* Section 1: Input */}
   <div className="flex-[1.5] flex items-center px-6 h-full relative">
@@ -24,7 +26,7 @@ const JobFeed = () => {
       className="w-full outline-none text-[14px] placeholder:text-slate-400" 
     />
     {/* Inset Divider */}
-    <div className="hidden md:block absolute right-0 h-8 w-[1px] bg-gray-200" />
+    <div className="hidden md:block absolute right-0 h-8 w-px bg-gray-200" />
   </div>
 
   {/* Section 2: Location */}
@@ -34,7 +36,7 @@ const JobFeed = () => {
     </select>
     <ChevronDownIcon className="h-4 w-4 text-slate-400 shrink-0 ml-1" />
     {/* Inset Divider */}
-    <div className="hidden md:block absolute right-0 h-8 w-[1px] bg-gray-200" />
+    <div className="hidden md:block absolute right-0 h-8 w-px bg-gray-200" />
   </div>
 
   {/* Section 3: Job Type */}
@@ -55,7 +57,7 @@ const JobFeed = () => {
         <div className="flex items-center gap-3">
           <span className="text-xs text-slate-500 font-medium">Similar:</span>
           {['Frontend', 'Backend', 'Graphic Designer'].map(tag => (
-            <button key={tag} className="text-xs border border-gray-300 px-[15px] py-2 rounded-md text-slate-600 hover:bg-gray-50 rounded-[5px] ">
+            <button key={tag} className="text-xs border border-gray-300 px-3.75 py-2 text-slate-600 hover:bg-gray-50 rounded-[5px] ">
               {tag}
             </button>
           ))}
@@ -64,7 +66,17 @@ const JobFeed = () => {
 
       <JobsHeader heading={"Featured Jobs"} subheading={"See Featured Jobs"} />
 
-      
+
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4' >
+
+          {
+            featuredJobsData.map(featuredJob => 
+              
+              <JobCard job={featuredJob} key={featuredJob?.id} />
+            )
+          }
+
+          </div>
 
     </div>
   )
