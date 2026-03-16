@@ -18,7 +18,7 @@ const JobFeed = () => {
           <p className="text-sm text-slate-500">Explore the latest job openings and apply for the best opportunities available today!</p>
         </div>
 
-        <div className="bg-white flex flex-col md:flex-row rounded-lg overflow-hidden border border-gray-100 items-center min-h-17.5 pr-4 gap-5 md:gap-0 py-5 md:py-0">
+        <div className="bg-white flex flex-col md:flex-row rounded-lg overflow-hidden border border-gray-100 items-center min-h-17.5 pr-4 gap-5 md:gap-0 py-5 md:py-0 w-full">
   
   {/* Section 1: Input */}
   <div className="flex-[1.5] flex items-center px-6 h-full relative">
@@ -56,7 +56,7 @@ const JobFeed = () => {
   </button>
 </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 flex-wrap sm:flex-nowrap">
           <span className="text-xs text-slate-500 font-medium">Similar:</span>
           {['Frontend', 'Backend', 'Graphic Designer'].map(tag => (
             <button key={tag} className="text-xs border border-gray-300 px-3.75 py-2 text-slate-600 hover:bg-gray-50 rounded-[5px] ">
