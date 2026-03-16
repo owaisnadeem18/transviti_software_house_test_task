@@ -5,6 +5,8 @@ import Image from 'next/image'
 import JobsHeader from './JobsHeader'
 import JobCard from './JobCard'
 import { featuredJobsData } from '@/lib/data/featuredJobsData'
+import { recommendedJobsData } from '@/lib/data/recommendedJobsData'
+import { latestJobsData } from '@/lib/data/latestJobsData'
 
 const JobFeed = () => {
   return (
@@ -67,12 +69,38 @@ const JobFeed = () => {
       <JobsHeader heading={"Featured Jobs"} subheading={"See Featured Jobs"} />
 
 
-          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4' >
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4' >
 
           {
             featuredJobsData.map(featuredJob => 
               
               <JobCard job={featuredJob} key={featuredJob?.id} />
+            )
+          }
+
+          </div>
+
+            <JobsHeader heading={"Recommended Jobs"} subheading={"See Recommended Jobs"} />
+
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4' >
+
+          {
+            recommendedJobsData.map(recommendedJob => 
+              
+              <JobCard job={recommendedJob} key={recommendedJob?.id} />
+            )
+          }
+
+          </div>
+
+            <JobsHeader heading={"Latest Jobs"} subheading={"See Latest Jobs"} />
+          
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4' >
+
+          {
+            latestJobsData.map(latestJob => 
+              
+              <JobCard job={latestJob} key={latestJob?.id} />
             )
           }
 
