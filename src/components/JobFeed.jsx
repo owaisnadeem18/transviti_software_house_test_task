@@ -18,7 +18,7 @@ const JobFeed = () => {
           <p className="text-sm text-slate-500">Explore the latest job openings and apply for the best opportunities available today!</p>
         </div>
 
-        <div className="bg-white flex flex-col md:flex-row rounded-lg overflow-hidden border border-gray-100 items-center min-h-17.5 pr-4">
+        <div className="bg-white flex flex-col md:flex-row rounded-lg overflow-hidden border border-gray-100 items-center min-h-17.5 pr-4 gap-5 md:gap-0 py-5 md:py-0">
   
   {/* Section 1: Input */}
   <div className="flex-[1.5] flex items-center px-6 h-full relative">
